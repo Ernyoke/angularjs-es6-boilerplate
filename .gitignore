@@ -59,3 +59,13 @@ typings/
 
 # next.js build output
 .next
+
+# build folder
+build
+
+# .idea
+.idea
+
+# Yarn
+yarn.lock
+yarn-error.log
