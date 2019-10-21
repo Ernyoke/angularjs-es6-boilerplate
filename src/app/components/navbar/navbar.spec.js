@@ -1,16 +1,16 @@
-import AboutModule from './about'
-import AboutController from './about.controller';
-import AboutComponent from './about.component';
-import AboutTemplate from './about.html';
+import NavbarModule from './navbar'
+import NavbarController from './navbar.controller';
+import NavbarComponent from './navbar.component';
+import NavbarTemplate from './navbar.html';
 
-describe('About', () => {
+describe('Navbar', () => {
     let $rootScope, makeController;
 
-    beforeEach(window.module(AboutModule));
+    beforeEach(window.module(NavbarModule));
     beforeEach(inject((_$rootScope_) => {
         $rootScope = _$rootScope_;
         makeController = () => {
-            return new AboutController();
+            return new NavbarController();
         }
     }));
 
@@ -24,14 +24,14 @@ describe('About', () => {
 
     describe('Component', () => {
         // component/directive specs
-        let component = AboutComponent;
+        let component = NavbarComponent;
 
         it('includes the intended template',() => {
-            expect(component.template).to.equal(AboutTemplate);
+            expect(component.template).to.equal(NavbarTemplate);
         });
 
         it('invokes the right controller', () => {
-            expect(component.controller).to.equal(AboutController);
+            expect(component.controller).to.equal(NavbarController);
         });
     });
 });
