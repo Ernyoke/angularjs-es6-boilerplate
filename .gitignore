@@ -67,5 +67,4 @@ build
 .idea
 
 # Yarn
-yarn.lock
 yarn-error.log

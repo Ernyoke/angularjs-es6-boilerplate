@@ -10,27 +10,11 @@ module.exports = {
     performance: {
         hints: false
     },
-    devtool: "source-map",
-    devServer: {
-        contentBase: path.resolve(__dirname, 'build'),
-        compress: true,
-        inline: true,
-        hot: true,
-        quiet: false,
-        port: 4200,
-        historyApiFallback: true,
-        stats: {
-            chunks: false,
-            chunkModules: false
-        }
-    },
     entry: {
         app: ["./src/app/app.js"]
     },
     output: {
         filename: '[name].bundle-[hash]-[id].js',
-        chunkFilename: '[name].chunk-[chunkhash]-[id].js',
-        sourceMapFilename: '[name].bundle-[hash]-[id].map',
         path: path.join(__dirname, 'build')
     },
     optimization: {
@@ -150,8 +134,6 @@ module.exports = {
             minify: false,
             inject: "body",
             hash: false
-        }),
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        })
     ]
 };
