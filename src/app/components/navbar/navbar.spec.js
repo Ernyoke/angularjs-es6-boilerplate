@@ -1,6 +1,6 @@
-import NavbarModule from './navbar'
+import NavbarModule from './navbar.module'
 import NavbarController from './navbar.controller';
-import NavbarComponent from './navbar.component';
+import navbarComponent from './navbar.component';
 import NavbarTemplate from './navbar.html';
 
 describe('Navbar', () => {
@@ -24,7 +24,7 @@ describe('Navbar', () => {
 
     describe('Component', () => {
         // component/directive specs
-        let component = NavbarComponent;
+        let component = navbarComponent();
 
         it('includes the intended template',() => {
             expect(component.template).to.equal(NavbarTemplate);

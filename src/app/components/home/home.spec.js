@@ -1,6 +1,6 @@
-import HomeModule from './home'
+import HomeModule from './home.module'
 import HomeController from './home.controller';
-import HomeComponent from './home.component';
+import homeComponent from './home.component';
 import HomeTemplate from './home.html';
 
 describe('Home', () => {
@@ -24,7 +24,7 @@ describe('Home', () => {
 
     describe('Component', () => {
         // component/directive specs
-        let component = HomeComponent;
+        let component = homeComponent();
 
         it('includes the intended template',() => {
             expect(component.template).to.equal(HomeTemplate);

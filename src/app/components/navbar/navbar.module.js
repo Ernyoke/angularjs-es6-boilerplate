@@ -3,10 +3,10 @@ import uiRouter from '@uirouter/angularjs';
 import navbarComponent from './navbar.component';
 
 const navbarModule = angular
-    .module('navbar', [
+    .module('appNavbar', [
         uiRouter
     ])
-    .component('navbar', navbarComponent)
+    .component('appNavbar', navbarComponent())
     .name;
 
 export default navbarModule;

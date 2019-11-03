@@ -1,10 +1,12 @@
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 import angularLoadingBar from 'angular-loading-bar';
-import ngMaterial from 'angular-material';
 import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
+import ngMaterial from 'angular-material';
+import RestangularProvder from 'restangular';
 import Components from './components/components';
+import Services from './services/services';
 import AppComponent from './app.component';
 
 import 'angular-material/angular-material.css';
@@ -16,11 +18,11 @@ angular
         ngMaterial,
         ngAnimate,
         ngAria,
-        Components
+        Components,
+        Services
     ])
     .value('EventEmitter', payload => ({$event: payload}))
     .config(($locationProvider, $urlRouterProvider) => {
-        'ngInject';
 
         $locationProvider.hashPrefix('');
         $locationProvider.html5Mode(true);
@@ -38,9 +40,10 @@ angular
 
         $mdThemingProvider.alwaysWatchTheme(true);
     })
+    .config((RestangularProvider) => {
+        RestangularProvider.setBaseUrl('http://localhost:8080/api/');
+    })
     .run(($transitions, cfpLoadingBar) => {
-        'ngInject';
-
         $transitions.onStart({}, cfpLoadingBar.start);
         $transitions.onSuccess({}, cfpLoadingBar.complete);
     })

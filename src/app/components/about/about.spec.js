@@ -1,12 +1,13 @@
-import AboutModule from './about'
+import AboutModule from './about.module';
 import AboutController from './about.controller';
-import AboutComponent from './about.component';
 import AboutTemplate from './about.html';
+import aboutComponent from './about.component';
 
 describe('About', () => {
     let $rootScope, makeController;
 
     beforeEach(window.module(AboutModule));
+
     beforeEach(inject((_$rootScope_) => {
         $rootScope = _$rootScope_;
         makeController = () => {
@@ -24,7 +25,7 @@ describe('About', () => {
 
     describe('Component', () => {
         // component/directive specs
-        let component = AboutComponent;
+        let component = aboutComponent();
 
         it('includes the intended template',() => {
             expect(component.template).to.equal(AboutTemplate);

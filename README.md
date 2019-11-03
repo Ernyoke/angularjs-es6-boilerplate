@@ -14,6 +14,7 @@ basically no other project which has the dependencies up to date.
 * Full testing system in place
 * SASS support
 * Angular material support
+* Restangular support
 
 ## Getting started
 

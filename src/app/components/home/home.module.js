@@ -2,21 +2,20 @@ import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 import homeComponent from './home.component';
 
-let homeModule = angular.module('home', [
+let homeModule = angular.module('appHome', [
     uiRouter
 ])
     .config(($stateProvider, $urlRouterProvider) => {
-        "ngInject";
 
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('home', {
                 url: '/',
-                component: 'home'
+                component: 'appHome'
             });
     })
-    .component('home', homeComponent)
+    .component('appHome', homeComponent())
     .name;
 
 export default homeModule;

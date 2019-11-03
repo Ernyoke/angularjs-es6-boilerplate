@@ -1,0 +1,17 @@
+<md-content>
+    <md-card md-theme="default">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>
+                    Students
+                </h3>
+            </div>
+        </md-toolbar>
+        <md-list flex>
+            <md-subheader>List</md-subheader>
+            <div ng-repeat="student in $ctrl.students">
+                <app-student data="student"></app-student>
+            </div>
+        </md-list>
+    </md-card>
+</md-content>

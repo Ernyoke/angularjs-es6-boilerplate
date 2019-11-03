@@ -10,7 +10,7 @@ module.exports = {
     performance: {
         hints: false
     },
-    devtool: "sourcemap",
+    devtool: "source-map",
     devServer: {
         contentBase: path.resolve(__dirname, 'build'),
         compress: true,
@@ -77,9 +77,10 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
+                        sourceMap: true,
                         plugins: [
-                            ["@babel/plugin-transform-runtime", { corejs: 2 }],
-                            ["angularjs-annotate", { explicitOnly: false }],
+                            ["@babel/plugin-transform-runtime", {corejs: 2}],
+                            ["angularjs-annotate", {explicitOnly: false}],
                             "lodash"
                         ],
                         presets: ["@babel/preset-env"]
@@ -112,11 +113,11 @@ module.exports = {
                     },
                     {
                         loader: 'css-loader',
-                        options: { sourceMap: true }
+                        options: {sourceMap: true}
                     },
                     {
                         loader: 'sass-loader',
-                        options: { sourceMap: true }
+                        options: {sourceMap: true}
                     }
                 ]
             },
