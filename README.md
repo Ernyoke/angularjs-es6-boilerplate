@@ -37,6 +37,12 @@ Tools needed: `node`, `yarn`
 * `yarn tests`
     * Executes existing dev tests.
     
+## Notes
+
+The project uses [Restangular](https://github.com/mgonto/restangular) in order to
+communicate with a REST end-point. An example for such an end-point can be
+found here: https://github.com/Ernyoke/students
+
 ## Credits
 
 This repository is heavily based on https://github.com/PatrickJS/NG6-starter
